@@ -1,9 +1,5 @@
 #!/bin/bash
 
-###############################################################################
-# arch-based system's KingOfBugBountyTips script to download all tools needed #
-###############################################################################
-
 if [ ! $(head -1 /etc/shadow 2>&-) ];then
 	printf "\nERROR: Run as Privileged User or Root!\n\n"
 	exit 1
@@ -247,6 +243,7 @@ ln -sf $PWD/freq $_path/freq
 # downloading gargs
 cd /$_dir
 curl -OLsk https://github.com/brentp/gargs/releases/download/v0.3.9/gargs_linux
+chmod +x gargs_linux
 mv $PWD/gargs_linux $_path/gargs
 
 # downloading gau
